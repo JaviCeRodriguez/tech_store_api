@@ -1,0 +1,6 @@
+django
+djangorestframework
+dj-database-url
+psycopg2-binary
+whitenoise[brotli]
+gunicorn
