@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', product_views.ProductList.as_view()),
     path('products/<int:pk>/', product_views.ProductDetail.as_view()),
+    path('categories/', product_views.CategoryList.as_view()),
+    path('categories/<int:pk>/', product_views.CategoryDetail.as_view()),
 ]
