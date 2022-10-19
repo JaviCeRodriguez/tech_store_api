@@ -1,6 +1,10 @@
 import os
+from dotenv import load_dotenv
 import dj_database_url
 from pathlib import Path
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,9 +80,12 @@ PASSWORD = os.getenv('PASSWORD')
 DBNAME = os.getenv('DBNAME')
 
 
-DATABASE_URL = f'postgres://{USER}:{PASSWORD}@{HOST}:5432/{DBNAME}'
+DATABASE_URL = f'postgres://{USER}:{PASSWORD}@{HOST}/{DBNAME}'
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL)
+    'default': dj_database_url.config(
+        default=DATABASE_URL,
+        conn_max_age=600
+    ),
 }
 
 
