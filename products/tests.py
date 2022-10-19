@@ -20,9 +20,7 @@ class GetAllProductsTest(TestCase):
             title='test title', description='test description', details='test details', specs='test specs', price=123.45, images='test images')
 
     def test_get_all_products(self):
-        # get API response
         response = client.get(reverse('get_post_products'))
-        # get data from db
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         self.assertEqual(response.data, serializer.data)
