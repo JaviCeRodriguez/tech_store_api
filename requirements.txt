@@ -5,3 +5,4 @@ psycopg2-binary
 whitenoise[brotli]
 gunicorn
 python-dotenv
+drf-yasg
