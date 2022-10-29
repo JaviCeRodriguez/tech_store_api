@@ -4,7 +4,7 @@ from .models import Product, Category
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'public_price', 'created_at')
-    list_filter = ('categories', )
+    list_filter = ('category', )
     search_fields = ('title__startswith', )
 
     def public_price(self, obj):
