@@ -6,3 +6,4 @@ whitenoise[brotli]
 gunicorn
 python-dotenv
 drf-yasg
+djangorestframework-simplejwt
